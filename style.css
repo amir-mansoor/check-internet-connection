@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+}
+
+.card {
+  padding:50px 30px;
+  border-radius: 10px;
+  background: #fbf4f4;
+  width: 50%;
+  position: absolute;
+  transform: translate(-50rem);
+  display: none;
+}
+
+.card.active {
+  transform: translate(0,0);
+  display: block;
+  animation: enter 1s 1;
+}
+
+.red-card h4{
+  color: red;
+}
+
+.green-card h4{
+  color: green;
+}
+
+@keyframes enter {
+  from {
+    transform: translate(-50rem);
+    display: none;
+  } to {
+    transform: translate(0rem);
+  }
+}

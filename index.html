@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Check internet connection</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="card red-card">
+      <h4>Lost Connection</h4>
+      <p>Please connect to the network.</p>
+    </div>
+    <div class="card green-card">
+      <h4>Connection Restored</h4>
+      <p>Your internet connection was successfully restored.</p>
+    </div>
+
+
+    <script type="text/javascript">
+      const redCard = document.querySelector('.red-card')
+      const greenCard = document.querySelector('.green-card')
+
+      const checkConnection = () => {
+        if(navigator.onLine) {
+          greenCard.classList.add("active")
+          redCard.classList.remove("active")
+        } else {
+          redCard.classList.add("active")
+          greenCard.classList.remove("active")
+        }
+      }
+
+      setInterval(checkConnection,5000)
+      window.addEventListener('load', checkConnection)
+
+    </script>
+  </body>
+</html>
